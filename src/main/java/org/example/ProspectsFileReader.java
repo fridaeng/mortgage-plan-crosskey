@@ -12,7 +12,7 @@ public class ProspectsFileReader {
     //method for reading file and putting it in arraylist of prospect objects
 
     public static ArrayList<Customer> readfile(File file){
-        ArrayList<Customer> customers = new ArrayList<Customer>();
+        ArrayList<Customer> customers = new ArrayList<>();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader(file.getPath()));
