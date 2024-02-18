@@ -7,7 +7,7 @@ public class MortgageCalculator {
 
 
     //makes calculation
-    //prints everything out
+    //prints calculation
 
     public static void calculateMortgagePlan(File file){
         ArrayList<Customer> customers = ProspectsFileReader.readfile(file);
@@ -24,7 +24,11 @@ public class MortgageCalculator {
 
 
 
-            System.out.println("Prospect "+ (i+1) + ": "+customerName+" wants to borrow "+u+" € for a period of "+years+" years and pay "+monthlyPayment+" € each month");
+            System.out.println("Prospect "+(i+1)+": "+
+                                customerName+
+                                " wants to borrow "+u+" € "+
+                                "for a period of "+years+" years "+
+                                "and pay "+monthlyPayment+" € each month");
 
         }
 
