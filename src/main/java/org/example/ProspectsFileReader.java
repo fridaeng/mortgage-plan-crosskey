@@ -21,7 +21,20 @@ public class ProspectsFileReader {
             String line;
             while ((line = reader.readLine()) != null) {
 
-                String[] attributes = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"); //split line by commas that are not surrounded by quotes
+                //removes quotes and commas in name
+                if (line.contains("\"")){
+
+                    int quoteStart = line.indexOf("\"");
+                    int quoteEnd = line.indexOf("\"", quoteStart+1);
+
+                    String name = line.substring(quoteStart+1, quoteEnd);   //gets the name part, excluding the quotes
+                    name = name.replace(",", " ");         //remove commas from name
+
+                    line = name + line.substring(quoteEnd+1);      //adds name together with rest of line
+
+                }
+
+                String[] attributes = line.split("[\",]");             //splits line into array of attributes
 
                 //TODO: check that line is written in the right format: String, double, double, int
                 if (attributes.length == 4){
