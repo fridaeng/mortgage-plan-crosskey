@@ -6,7 +6,7 @@ public class Customer {
     private double totalLoan;
     private double interestRate;
     private int paymentYears;
-    private int monthlyPayment;
+    private double monthlyPayment;
 
     public String getName() {
         return name;
@@ -36,11 +36,11 @@ public class Customer {
         this.paymentYears = paymentYears;
     }
 
-    public int getMonthlyPayment() {
+    public double getMonthlyPayment() {
         return monthlyPayment;
     }
 
-    public void setMonthlyPayment(int monthlyPayment) {
+    public void setMonthlyPayment(double monthlyPayment) {
         this.monthlyPayment = monthlyPayment;
     }
 }

@@ -5,32 +5,24 @@ import java.util.ArrayList;
 
 public class MortgageCalculator {
 
-
     //makes calculation
     //prints calculation
-
     public static void calculateMortgagePlan(File file){
         ArrayList<Customer> customers = ProspectsFileReader.readfile(file);
 
-        for (int i = 0; i<customers.size(); i++){
+        for (Customer c : customers) {
 
-            String customerName = customers.get(i).getName();
-            double u = customers.get(i).getTotalLoan(); // total loan
-            double b = customers.get(i).getInterestRate()/(12 * 100); //interest on a monthly basis
-            int years = customers.get(i).getPaymentYears();
-            int p = years*12; //total number of payments
+            double u = c.getTotalLoan();                    //total loan
+            double b = c.getInterestRate() / (12 * 100);    //interest on a monthly basis
+            int p = c.getPaymentYears() * 12;               //payment months (total number of payments)
 
-            double monthlyPayment = u * (b * power(1+b, p)) / (power(1+b, p) - 1); //mortgage formula
+            double e = u * (b * power(1 + b, p)) / (power(1 + b, p) - 1); //mortgage formula
 
-
-
-            System.out.println("Prospect "+(i+1)+": "+
-                                customerName+
-                                " wants to borrow "+u+" € "+
-                                "for a period of "+years+" years "+
-                                "and pay "+monthlyPayment+" € each month");
+            c.setMonthlyPayment(e);
 
         }
+
+        printCalculations(customers);
 
     }
 
@@ -45,15 +37,23 @@ public class MortgageCalculator {
 
     }
 
-    //test
-    /*
-    public static void prinnnt(){
-        double i = (double) 5 /(12*100);
-        int y = 4*12;
-        double pow = power(i, y);
-        System.out.println(pow);
-    }
-    */
+    private static void printCalculations(ArrayList<Customer> customers){
 
+        for (int i=0; i<customers.size(); i++){
+            Customer c = customers.get(i);
+
+            String name = c.getName();
+            double loan = c.getTotalLoan();
+            int years = c.getPaymentYears();
+            String monthlyPayment = String.format("%.2f", c.getMonthlyPayment());
+
+            System.out.println("Prospect "+(i+1)+": "+
+                    name+
+                    " wants to borrow "+loan+" € "+
+                    "for a period of "+years+" years "+
+                    "and pay "+monthlyPayment+" € each month");
+        }
+
+    }
 
 }

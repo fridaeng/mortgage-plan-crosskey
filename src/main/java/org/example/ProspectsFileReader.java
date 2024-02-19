@@ -21,30 +21,22 @@ public class ProspectsFileReader {
             String line;
             while ((line = reader.readLine()) != null) {
 
-                String name;
-                double loan;
-                double interest;
-                int years;
-
                 String[] attributes = line.split(",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)"); //split line by commas that are not surrounded by quotes
 
-                //TODO: check that line written in the right format: String, double, double, int
+                //TODO: check that line is written in the right format: String, double, double, int
                 if (attributes.length == 4){
-                    name = attributes[0];
-                    loan = Double.parseDouble(attributes[1]);
-                    interest = Double.parseDouble(attributes[2]);
-                    years = Integer.parseInt(attributes[3]);
-
                     //register customer with attributes and add to list
                     Customer customer = new Customer();
 
-                    customer.setName(name);
-                    customer.setTotalLoan(loan);
-                    customer.setInterestRate(interest);
-                    customer.setPaymentYears(years);
+                    customer.setName(attributes[0]);
+                    customer.setTotalLoan(Double.parseDouble(attributes[1]));
+                    customer.setInterestRate(Double.parseDouble(attributes[2]));
+                    customer.setPaymentYears(Integer.parseInt(attributes[3]));
+
                     customers.add(customer);
+
                 } else {
-                    //wrong nr of attributes
+                    //TODO: wrong nr of attributes
                 }
 
             }
