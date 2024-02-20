@@ -5,9 +5,11 @@ import java.util.ArrayList;
 
 public class MortgageCalculator {
 
-    //makes calculation
-    //prints calculation
-    public static void calculateMortgagePlan(File file){
+    /*
+    calculates the mortgage plan for a list of customers (prospects)
+    and updates their monthlyPayment value, returns the customers
+    */
+    public ArrayList<Customer> calculateMortgagePlan(File file){
         ArrayList<Customer> customers = ProspectsFileReader.readfile(file);
 
         for (Customer c : customers) {
@@ -22,11 +24,12 @@ public class MortgageCalculator {
 
         }
 
-        printCalculations(customers);
+        return customers;
 
     }
 
     //calculate positive exponent
+    //TODO: handle negative value cases
     private static double power(double base, int exponent){
         double result = 1.0;
         while (exponent != 0){
@@ -37,7 +40,7 @@ public class MortgageCalculator {
 
     }
 
-    private static void printCalculations(ArrayList<Customer> customers){
+    public void printCalculations(ArrayList<Customer> customers){
 
         for (int i=0; i<customers.size(); i++){
             Customer c = customers.get(i);

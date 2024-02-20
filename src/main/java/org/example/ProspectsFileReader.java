@@ -8,8 +8,7 @@ import java.util.ArrayList;
 
 public class ProspectsFileReader {
 
-    //method for reading file and putting it in arraylist of prospect objects
-
+    //method for reading file and putting it in arraylist of customers
     public static ArrayList<Customer> readfile(File file){
         ArrayList<Customer> customers = new ArrayList<>();
 
@@ -36,21 +35,24 @@ public class ProspectsFileReader {
 
                 String[] attributes = line.split("[\",]");             //splits line into array of attributes
 
-                //TODO: check that line is written in the right format: String, double, double, int
-                if (attributes.length == 4){
-                    //register customer with attributes and add to list
-                    Customer customer = new Customer();
+                //register customer with attributes and add to list
+                Customer customer = new Customer();
 
+                try {
                     customer.setName(attributes[0]);
                     customer.setTotalLoan(Double.parseDouble(attributes[1]));
                     customer.setInterestRate(Double.parseDouble(attributes[2]));
                     customer.setPaymentYears(Integer.parseInt(attributes[3]));
 
                     customers.add(customer);
+                    //System.out.println("Prospect successfully added");
 
-                } else {
-                    //TODO: wrong nr of attributes
+                } catch (IllegalArgumentException e) {
+                    //System.out.println("Prospect could not be added: Illegal attribute");
+                } catch (ArrayIndexOutOfBoundsException e){
+                    //System.out.println("Prospect could not be added: Wrong nr of attributes");
                 }
+
 
             }
             reader.close();

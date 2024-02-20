@@ -1,14 +1,25 @@
 package org.example;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
 
-        MortgageCalculator.calculateMortgagePlan(new File("prospects.txt"));//give file from input?
+        //TODO: too much happening in main
 
-        /* TODO: check that access modifiers are ok
+        ArrayList<Customer> customers;
 
-         */
+        //program starts calculator
+        MortgageCalculator mortgageCalculator = new MortgageCalculator();
+
+        //get file or input
+        File prospectsInput = new File("prospects.txt");
+
+        //program enters file into calculator (when prompted with input?)
+        customers = mortgageCalculator.calculateMortgagePlan(prospectsInput);
+
+        mortgageCalculator.printCalculations(customers);
+
     }
 }
