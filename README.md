@@ -28,7 +28,7 @@ gradle build
 gradle run
 ```
 <h3>4. To enter new prospect data</h3>
-manually update "prospects.txt" located in the project folder
+Manually update "prospects.txt" located in the project folder
 
 <br /><br />
 Note:
