@@ -8,6 +8,20 @@ public class Customer {
     private int paymentYears;
     private double monthlyPayment;
 
+    //constructors
+    public Customer() {
+
+    }
+
+    public Customer(String name, double totalLoan, double interestRate, int paymentYears, double monthlyPayment){
+        this.name = name;
+        this.totalLoan = totalLoan;
+        this.interestRate = interestRate;
+        this.paymentYears = paymentYears;
+        this.monthlyPayment = monthlyPayment;
+    }
+
+    //getters, setters
     public String getName() {
         return name;
     }
@@ -39,8 +53,9 @@ public class Customer {
     public double getMonthlyPayment() {
         return monthlyPayment;
     }
-
     public void setMonthlyPayment(double monthlyPayment) {
         this.monthlyPayment = monthlyPayment;
     }
+
+
 }

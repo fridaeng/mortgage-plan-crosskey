@@ -1,16 +1,10 @@
 package org.example;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class MortgageCalculator {
 
-    /*
-    calculates the mortgage plan for a list of customers (prospects)
-    and updates their monthlyPayment value, returns the customers
-    */
-    public ArrayList<Customer> calculateMortgagePlan(File file){
-        ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
+    public ArrayList<Customer> calculateMortgagePlan(ArrayList<Customer> customers){
 
         for (Customer c : customers) {
 

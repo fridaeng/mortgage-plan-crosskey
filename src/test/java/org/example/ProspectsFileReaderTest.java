@@ -39,8 +39,7 @@ class ProspectsFileReaderTest {
     @Test
     void testReadInvalidFile(){
         File file = new File("invalid_file.txt");
-        MortgageCalculator calculator = new MortgageCalculator();
-        ArrayList<Customer> customers = calculator.calculateMortgagePlan(file);
+        ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
 
         assertTrue(customers.isEmpty());
     }
