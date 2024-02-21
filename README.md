@@ -13,13 +13,20 @@ Follow the steps below to get started:
 <h3>1. Make sure you have <a href="https://www.oracle.com/java/technologies/downloads/#jdk17-windows">Java</a> (v17) and <a href="https://gradle.org/install/">Gradle</a> (v.7.6.4) installed </h3>
 
 <h3>2. Download the project from GitHub, or clone it using this command</h3>
+
+```
 git clone https://github.com/fridaeng/mortgage-plan-crosskey.git
+```
 
 <h3>3. Run the following commands to build and run the application</h3>
-gradle build
-<br /><br />
-gradle run
 
+```
+gradle build
+```
+
+```
+gradle run
+```
 <h3>4. To enter new prospect data</h3>
 manually update "prospects.txt" located in the project folder
 
