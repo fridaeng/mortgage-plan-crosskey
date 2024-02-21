@@ -36,7 +36,7 @@ This project is not finished :(
 <br /><br />
 Future updates:
 <li>Turn project into web application with Spring Boot</li>
-<li>User friendly interface for making calculations and listing prospects</li>
+<li>User-friendly interface for making calculations and listing prospects</li>
 <li>Feature to add new prospect data through web interface</li>
 <br /><br />
 Thank you for using the Mortgage Plan Calculator!
