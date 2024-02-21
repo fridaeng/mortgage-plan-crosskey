@@ -10,7 +10,7 @@ public class MortgageCalculator {
     and updates their monthlyPayment value, returns the customers
     */
     public ArrayList<Customer> calculateMortgagePlan(File file){
-        ArrayList<Customer> customers = ProspectsFileReader.readfile(file);
+        ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
 
         for (Customer c : customers) {
 

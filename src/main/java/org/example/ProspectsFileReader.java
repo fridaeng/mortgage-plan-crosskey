@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ProspectsFileReader {
 
     //method for reading file and putting it in arraylist of customers
-    public static ArrayList<Customer> readfile(File file){
+    public static ArrayList<Customer> readProspectsFile(File file){
         ArrayList<Customer> customers = new ArrayList<>();
 
         try {
@@ -52,7 +52,6 @@ public class ProspectsFileReader {
                 } catch (ArrayIndexOutOfBoundsException e){
                     //System.out.println("Prospect could not be added: Wrong nr of attributes");
                 }
-
 
             }
             reader.close();
