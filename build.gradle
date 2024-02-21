@@ -1,5 +1,7 @@
 plugins {
     id 'java'
+    id 'application'
+
 }
 
 jar {
@@ -20,4 +22,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+application {
+    mainClassName = 'org.example.Main'
+}
+
+run {
+    args += 'first_arg'
 }
