@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class ProspectsFileReaderTest {
 
     @Test
-    void testReadProspectsFile(){
+    void testReadProspectsFile() {
         File file = new File("test_file_prospects.txt");
         ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
 
@@ -37,7 +37,7 @@ class ProspectsFileReaderTest {
     }
 
     @Test
-    void testReadInvalidFile(){
+    void testReadInvalidFile() {
         File file = new File("invalid_file.txt");
         ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
 

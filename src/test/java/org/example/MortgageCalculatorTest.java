@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class MortgageCalculatorTest {
 
     @Test
-    void testCalculateMortgagePlan(){
+    void testCalculateMortgagePlan() {
         File file = new File("test_file_prospects.txt");
         ArrayList<Customer> customers = ProspectsFileReader.readProspectsFile(file);
         MortgageCalculator calculator = new MortgageCalculator();
@@ -47,6 +47,6 @@ class MortgageCalculatorTest {
         String printedOutput = outputStream.toString();
 
         assertEquals("Prospect 1: Mickey Mouse wants to borrow 1500.0 € for a period of 3 years and pay 43.62 € each month" + System.lineSeparator() +
-                            "Prospect 2: Donald Duck wants to borrow 10000.0 € for a period of 5 years and pay 173.10 € each month" + System.lineSeparator(), printedOutput);
+                "Prospect 2: Donald Duck wants to borrow 10000.0 € for a period of 5 years and pay 173.10 € each month" + System.lineSeparator(), printedOutput);
     }
 }
