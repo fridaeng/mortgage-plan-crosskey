@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class ProspectsFileReader {
 
     /*
-     *   Reads a file and puts it in list of customers and calculates the monthly mortgage payment sum
+     *   Reads a file and puts it in list of customers
      *   returns the list of customers
      */
     public static ArrayList<Customer> readProspectsFile(File file) {
