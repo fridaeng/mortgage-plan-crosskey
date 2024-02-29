@@ -42,7 +42,7 @@ public class ProspectsFileReader {
 
     /*
      *   Some lines in the input file may have names written in quotes
-     *   This method cleans removes the quotes and any commas in the name
+     *   This method removes the quotes and any commas in the name
      *   Finally it adds name together with the rest of the line, so that it can later be split up into attributes
      */
     private static String removeQuotesAndCommasInName(String line) {
